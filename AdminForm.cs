@@ -165,49 +165,6 @@ namespace cargo_tracker
                 MessageBox.Show(ex.Message);
             }
         }
-        private void txtAlici_Enter(object sender, EventArgs e)
-        {
-            if (txtAlici.Text == "Alıcı")
-            {
-                txtAlici.Text = "";
-                txtAlici.ForeColor = Color.Black;
-            }
-        }
-        private void txtBirim_Enter(object sender, EventArgs e)
-        {
-            if (txtBirim.Text == "Birim")
-            {
-                txtBirim.Text = "";
-                txtBirim.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtBirim_Leave(object sender, EventArgs e)
-        {
-            if (txtBirim.Text == "")
-            {
-                txtBirim.Text = "Birim";
-                txtBirim.ForeColor = Color.Gray;
-            }
-        }
-
-        private void txtGonderici_Enter(object sender, EventArgs e)
-        {
-            if (txtGonderici.Text == "Gönderen")
-            {
-                txtGonderici.Text = "";
-                txtGonderici.ForeColor = Color.Black;
-            }
-        }
-
-        private void txtGonderici_Leave(object sender, EventArgs e)
-        {
-            if (txtGonderici.Text == "")
-            {
-                txtGonderici.Text = "Gönderen";
-                txtGonderici.ForeColor = Color.Gray;
-            }
-        }
 
         private void cmbIslem_Enter(object sender, EventArgs e)
         {
@@ -269,6 +226,7 @@ namespace cargo_tracker
             AdminTabloyuDoldur();
             AliciOnerileriniYukle();
             TelefonOnerileriniYukle();
+            KutulariTemizle();
             dgvKargolar.ColumnHeadersDefaultCellStyle.BackColor = Color.SlateGray;
             dgvKargolar.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvKargolar.EnableHeadersVisualStyles = false;
