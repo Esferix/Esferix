@@ -221,7 +221,7 @@ namespace cargo_tracker.arayuz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dgvKargolar.CurrentRow != null)
+            if (dgvKargolar.SelectedRows.Count > 0)
             {
                 string takipNo = dgvKargolar.CurrentRow.Cells["TakipNo"].Value.ToString();
                 string yeniDurum = cmbIslem.Text;
@@ -255,6 +255,7 @@ namespace cargo_tracker.arayuz
                             KargoListele(girisYapanKullanici);
                             KutulariTemizle();
                             dgvKargolar.ClearSelection();
+                            dgvKargolar.CurrentCell = null;
                         }
                     }
                     catch (Exception ex)
